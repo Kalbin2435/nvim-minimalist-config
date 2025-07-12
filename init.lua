@@ -1,3 +1,4 @@
+require("terminal_splitter")
 vim.o.relativenumber = true
 vim.o.number = true
 vim.o.hlsearch = false
@@ -21,9 +22,19 @@ vim.opt.path:append '**'
 vim.g.netrw_banner=0
 vim.g.netrw_altv=1
 vim.g.netrw_liststyle=3
-vim.g.netrw_bufsettings = 'nu rnu'
+vim.g.netrw_bufsettings="noma nomod nonu nobl nowrap ro nu rnu"
+vim.g.netrw_=3
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-N>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-\\>', ':lua ToggleCurrentSplit("horizontal")<CR>', { noremap = true, silent = true })
+vim.keymap.set("t", "<C-\\>", function()
+  vim.cmd("stopinsert")
+  ToggleCurrentSplit()
+end)
 vim.cmd("color retrobox")
+vim.o.autowrite = true
+vim.o.autowriteall = true
+
