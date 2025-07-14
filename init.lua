@@ -12,7 +12,6 @@ vim.o.shiftwidth = 4
 vim.o.laststatus = 2
 vim.o.showmode = true
 vim.o.wildmenu = true
-vim.o.wildmode = "list:longest,full"
 vim.o.title = true
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 10
