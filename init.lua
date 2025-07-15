@@ -34,4 +34,4 @@ end)
 vim.cmd("color sorbet")
 vim.o.autowrite = true
 vim.o.autowriteall = true
-vim.o.shell = "powershell.exe"
+if vim.fn.has('win32') then vim.o.shell = "powershell.exe" end
