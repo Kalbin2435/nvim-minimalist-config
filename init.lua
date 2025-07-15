@@ -17,7 +17,7 @@ vim.o.scrolloff = 8
 vim.o.sidescrolloff = 10
 vim.o.updatetime = 300 
 vim.opt.clipboard = "unnamedplus"
-vim.opt.path:append '**'
+vim.cmd([[ set path+=**]])
 vim.g.netrw_banner=0
 vim.g.netrw_altv=1
 vim.g.netrw_bufsettings="noma nomod nonu nobl nowrap ro nu rnu"
@@ -34,4 +34,4 @@ end)
 vim.cmd("color sorbet")
 vim.o.autowrite = true
 vim.o.autowriteall = true
-
+vim.o.shell = "powershell.exe"
